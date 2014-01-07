@@ -1,21 +1,21 @@
 module Component
 
 class Page < Lissio::Component::Container
-	element '#page'
+  element '#page'
 
-	def go(page, data = nil)
-		case page
-		when :index
-			Shows.all { |shows|
-				ShowTemplate.new(self, shows).render
-			}
+  def go(page, data = nil)
+    case page
+    when :index
+      Shows.all { |shows|
+        ShowTemplate.new(self, shows).render
+      }
     end
-	end
+  end
 
-	def render
-		super do
+  def render
+    super do
       table({class: 'table table-bordered table-hover'}) do
-    		tbody.mescalina! do
+        tbody.mescalina! do
           tr do
             td 'Name'
             td 'Episodes'
@@ -28,7 +28,7 @@ class Page < Lissio::Component::Container
             td 'Encoder'
             td 'QChecker'
           end
-	      end
+        end
       end
     end
   end
